@@ -1,11 +1,11 @@
 
-from django import forms
-from .models import Contact
+from django.forms import ModelForm
+from .models import Album
 
 
-class ContactForm(forms.ModelForm):
+class AlbumForm(ModelForm):
     class Meta:
-        model = Contact
+        model = Album
         fields = [
             'title',
             'artist',
