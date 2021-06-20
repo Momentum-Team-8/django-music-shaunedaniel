@@ -2,13 +2,18 @@
 <!--  this is where we render our album information to the browser -->
 <h1>Here's Muh Albums</h1>
 
+<p><a href="{% url 'add_album' %}">Add New Album</a></p>
 <div>
   {% for album in albums %}
   <div class="card">
     {% if album.title %}
     <p>{{album.title}}</p>
+    <p>{{album.artist}}</p>
     {% endif %}
+    <a href="{% url 'edit_album' pk=album.pk %}">Update</a><br />
+    <a href="{% url 'delete_album' pk=album.pk %}">Delete</a><br />
   </div>
+  <br />
   {% endfor %}
 </div>
 {% endblock %}

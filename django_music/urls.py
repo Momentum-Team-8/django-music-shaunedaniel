@@ -6,5 +6,7 @@ from albums import views as albums_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', albums_views.list_albums, name='list_albums'),
-    path('', albums_views.add_album),
+    path('albums/add/', albums_views.add_album, name='add_album'),
+    path('albums/<int:pk>/edit/', albums_views.edit_album, name='edit_album'),
+    path('albums/<int:pk>/delete/', albums_views.delete_album, name='delete_album'),
 ]
