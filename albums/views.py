@@ -2,7 +2,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Album
 from .forms import AlbumForm
-from django.utils import timezone
 
 # Create your views here.
 
@@ -20,7 +19,6 @@ def add_album(request):
         form = AlbumForm(data=request.POST)
         if form.is_valid():
             form.save()
-            add_album.created_date = timezone.now()
             return redirect(to='list_albums')
 
     return render(request, "albums/add_album.html", {"form": form})

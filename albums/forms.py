@@ -10,4 +10,6 @@ class AlbumForm(ModelForm):
             'title',
             'artist',
             'album_art',
+            'created_at'
+
         ]
