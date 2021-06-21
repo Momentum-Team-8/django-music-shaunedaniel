@@ -9,5 +9,5 @@ class AlbumForm(ModelForm):
         fields = [
             'title',
             'artist',
-            'created_at',
+            'album_art',
         ]

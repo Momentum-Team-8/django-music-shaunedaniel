@@ -9,6 +9,7 @@
     {% if album.title %}
     <p>{{album.title}}</p>
     <p>{{album.artist}}</p>
+    <img src="{{album.album_art}}" />
     {% endif %}
     <a href="{% url 'edit_album' pk=album.pk %}">Update</a><br />
     <a href="{% url 'delete_album' pk=album.pk %}">Delete</a><br />
